@@ -1,0 +1,28 @@
+﻿<Application x:Class="MedX.Desktop.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:MedX.Desktop"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                
+                <!--begin::Themes-->
+                <ResourceDictionary Source="/Themes/LightTheme.xaml"/>
+                <ResourceDictionary Source="/Themes/DarkTheme.xaml"/>
+                <!--end::Themes-->
+                
+                <!--begin::Icons-->
+                <ResourceDictionary Source="/Assets/Icons/Icons.xaml"/>
+                <!--end::Icons-->
+                
+                <!--begin::Styles-->
+                <ResourceDictionary Source="/Styles/ButtonStyles.xaml"/>
+                <!--end::Styles-->
+
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+         
+    </Application.Resources>
+</Application>
