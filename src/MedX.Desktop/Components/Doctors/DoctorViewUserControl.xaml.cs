@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MedX.Desktop.Pages
+namespace MedX.Desktop.Components.Doctors
 {
     /// <summary>
-    /// Interaction logic for DoctorsPage.xaml
+    /// Interaction logic for DoctorViewUserControl.xaml
     /// </summary>
-    public partial class DoctorsPage : Page
+    public partial class DoctorViewUserControl : UserControl
     {
-        public DoctorsPage()
+        public DoctorViewUserControl()
         {
             InitializeComponent();
         }

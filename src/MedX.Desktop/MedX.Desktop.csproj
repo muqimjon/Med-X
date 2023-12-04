@@ -19,11 +19,14 @@
   <ItemGroup>
     <Folder Include="Assets\Logos\" />
     <Folder Include="Assets\Sounds\" />
-    <Folder Include="Components\" />
     <Folder Include="Constants\" />
     <Folder Include="Entities\" />
     <Folder Include="Enums\" />
     <Folder Include="ViewModels\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MedX.Service\MedX.Service.csproj" />
   </ItemGroup>
 
 </Project>
