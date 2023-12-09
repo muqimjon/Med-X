@@ -25,8 +25,8 @@ builder.Services.AddServices();
 // Add Authorization
 builder.Services.ConfigureSwagger();
 
-// Logger
-/*var logger = new LoggerConfiguration()
+/*// Logger
+var logger = new LoggerConfiguration()
                     .ReadFrom.Configuration(builder.Configuration)
                     .Enrich.FromLogContext()
                     .CreateLogger();

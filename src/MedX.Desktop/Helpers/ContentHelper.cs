@@ -1,8 +1,9 @@
 ﻿using System.Text;
 using Newtonsoft.Json;
 using System.Net.Http;
-using MedX.WebApi.Models;
 using System.Windows;
+using MedX.WebApi.Models;
+using MedX.Service.DTOs.Employees;
 
 namespace MedX.Desktop.Helpers;
 
@@ -11,14 +12,14 @@ public class ContentHelper
     public static StringContent GetContent(dynamic content)
         => new(JsonConvert.SerializeObject(content), Encoding.UTF8, "application/json");
 
-    public static async ValueTask<TContent> GetContentAsync<TContent>(HttpResponseMessage responseMessage) where TContent : class, new()
+    public static async ValueTask<TContent> GetContentAsync<TContent>(HttpResponseMessage responseMessage) where TContent : new()
     {
-        var content = await responseMessage.Content.ReadAsStringAsync();
-        var response = JsonConvert.DeserializeObject<Response>(content);
-        if (response!.StatusCode == 200)
-            return JsonConvert.DeserializeObject<TContent>(response.Data.ToString()!)!;
+        var resp = JsonConvert.DeserializeObject<Response>(await responseMessage.Content.ReadAsStringAsync());
 
-        MessageBox.Show(response.Message);
+        if (resp!.StatusCode == 200)
+            return JsonConvert.DeserializeObject<TContent>(resp.Data.ToString());
+
+        MessageBox.Show(resp.Message);
         return new();
     }
 }
